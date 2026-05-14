@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Aplikasi CV - Local Storage</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>Aplikasi CV Interaktif</h1>
+
+  <!-- FORM INPUT -->
+  <div class="form-section" id="form-section">
+    <h2>Data Diri</h2>
+
+    <label>Nama Lengkap</label>
+    <input type="text" id="nama" placeholder="Masukkan nama lengkap" />
+
+    <label>Profesi / Jabatan</label>
+    <input type="text" id="profesi" placeholder="Contoh: Web Developer" />
+
+    <label>Email</label>
+    <input type="text" id="email" placeholder="Masukkan email" />
+
+    <label>No. Telepon</label>
+    <input type="text" id="telepon" placeholder="Masukkan nomor telepon" />
+
+    <label>Alamat</label>
+    <input type="text" id="alamat" placeholder="Masukkan alamat" />
+
+    <label>Pendidikan Terakhir</label>
+    <input type="text" id="pendidikan" placeholder="Contoh: S1 Teknik Informatika - Universitas X (2020)" />
+
+    <label>Pengalaman Kerja</label>
+    <textarea id="pengalaman" placeholder="Contoh: Frontend Developer di PT. ABC (2021-2023)"></textarea>
+
+    <label>Keahlian</label>
+    <textarea id="keahlian" placeholder="Contoh: HTML, CSS, JavaScript, Photoshop"></textarea>
+
+    <div class="btn-group">
+      <button onclick="simpanData()">💾 Simpan</button>
+      <button onclick="tampilkanCV()">👁 Lihat CV</button>
+      <button onclick="hapusData()">🗑 Hapus Data</button>
+    </div>
+
+    <p id="pesan"></p>
+  </div>
+
+  <!-- CV PREVIEW -->
+  <div class="cv-section" id="cv-output">
+
+    <div class="cv-header">
+      <div class="cv-avatar" id="cv-avatar"></div>
+      <div class="cv-header-info">
+        <h2 id="cv-nama"></h2>
+        <p id="cv-profesi"></p>
+      </div>
+    </div>
+
+    <div class="cv-body">
+
+      <div class="cv-left">
+        <div class="cv-block">
+          <h3>Kontak</h3>
+          <p>📧 <span id="cv-email"></span></p>
+          <p>📞 <span id="cv-telepon"></span></p>
+          <p>📍 <span id="cv-alamat"></span></p>
+        </div>
+
+        <div class="cv-block">
+          <h3>Keahlian</h3>
+          <div id="cv-keahlian"></div>
+        </div>
+      </div>
+
+      <div class="cv-right">
+        <div class="cv-block">
+          <h3>Pendidikan</h3>
+          <p id="cv-pendidikan"></p>
+        </div>
+
+        <div class="cv-block">
+          <h3>Pengalaman Kerja</h3>
+          <p id="cv-pengalaman"></p>
+        </div>
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
