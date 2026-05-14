@@ -1,0 +1,217 @@
+/* --- Reset & Base --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --warna-utama: #2c5f8a;
+    --warna-aksen: #e8f0f7;
+    --warna-teks: #2d2d2d;
+    --warna-teks-ringan: #555;
+    --warna-garis: #d0d8e0;
+    --font-utama: Georgia, 'Times New Roman', serif;
+    --font-sans: 'Segoe UI', Tahoma, Geneva, sans-serif;
+}
+
+body {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    color: var(--warna-teks);
+    background-color: #f4f6f8;
+    line-height: 1.7;
+}
+
+/* --- Pembungkus Utama --- */
+main, header, nav, footer {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* --- Header / Profil --- */
+header {
+    padding-top: 40px;
+    padding-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+}
+
+header figure img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--warna-utama);
+}
+
+header h1 {
+    font-family: var(--font-utama);
+    font-size: 1.9rem;
+    color: var(--warna-utama);
+    margin-top: 8px;
+}
+
+header hgroup p {
+    font-size: 0.95rem;
+    color: var(--warna-teks-ringan);
+    font-style: italic;
+}
+
+header address {
+    font-style: normal;
+    font-size: 0.875rem;
+    color: var(--warna-teks-ringan);
+}
+
+header address a {
+    color: var(--warna-utama);
+    text-decoration: none;
+}
+
+header address a:hover {
+    text-decoration: underline;
+}
+
+/* --- Garis Pemisah --- */
+hr {
+    max-width: 760px;
+    margin: 0 auto;
+    border: none;
+    border-top: 1px solid var(--warna-garis);
+}
+
+/* --- Navigasi --- */
+nav {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+nav ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    list-style: none;
+    justify-content: center;
+}
+
+nav ol li a {
+    font-size: 0.875rem;
+    color: var(--warna-utama);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav ol li a:hover {
+    text-decoration: underline;
+}
+
+/* --- Konten Utama --- */
+main {
+    padding-top: 8px;
+    padding-bottom: 40px;
+}
+
+/* --- Section --- */
+section {
+    padding: 28px 0;
+}
+
+section h2 {
+    font-family: var(--font-utama);
+    font-size: 1.25rem;
+    color: var(--warna-utama);
+    border-left: 4px solid var(--warna-utama);
+    padding-left: 12px;
+    margin-bottom: 16px;
+}
+
+section h3 {
+    font-size: 1rem;
+    color: var(--warna-teks);
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+section p {
+    color: var(--warna-teks-ringan);
+    margin-bottom: 8px;
+}
+
+/* --- List --- */
+ul, ol {
+    padding-left: 20px;
+}
+
+ul li, ol li {
+    margin-bottom: 6px;
+    color: var(--warna-teks-ringan);
+}
+
+/* --- Data Diri (dl) --- */
+dl {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 8px 16px;
+}
+
+dt {
+    font-weight: 600;
+    color: var(--warna-teks);
+}
+
+dd {
+    color: var(--warna-teks-ringan);
+}
+
+/* --- Artikel Proyek --- */
+article {
+    background-color: var(--warna-aksen);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+}
+
+article h3 {
+    font-size: 1rem;
+    color: var(--warna-utama);
+    margin-top: 0;
+    margin-bottom: 6px;
+}
+
+article p {
+    font-size: 0.875rem;
+    margin-bottom: 10px;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 20px 24px;
+    font-size: 0.8rem;
+    color: var(--warna-teks-ringan);
+}
+
+/* --- Responsif (layar kecil) --- */
+@media (max-width: 520px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    dl {
+        grid-template-columns: 1fr;
+        gap: 2px 0;
+    }
+
+    dt {
+        margin-top: 10px;
+    }
+
+    nav ol {
+        gap: 6px 14px;
+    }
+}
