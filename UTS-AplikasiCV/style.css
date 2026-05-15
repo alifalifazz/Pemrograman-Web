@@ -1,0 +1,374 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f0f2f5;
+    color: #333;
+    font-size: 14px;
+}
+
+/* ── LAYOUT UTAMA ── */
+.cv-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ── SIDEBAR ── */
+.sidebar {
+    width: 240px;
+    background: #1e3a5f;
+    color: #fff;
+    flex-shrink: 0;
+    padding: 24px 16px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar-profile {
+    text-align: center;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: #3b82f6;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+    border: 3px solid rgba(255,255,255,0.3);
+}
+
+.sidebar-profile h1 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.sidebar-profile p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 2px;
+}
+
+.nav-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 8px;
+    padding-left: 8px;
+}
+
+.sidebar nav ul {
+    list-style: none;
+}
+
+.sidebar nav ul li a {
+    display: block;
+    padding: 8px 12px;
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 13px;
+    transition: background 0.2s;
+}
+
+.sidebar nav ul li a:hover {
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+}
+
+/* ── KONTEN UTAMA ── */
+.cv-main {
+    flex: 1;
+    padding: 24px;
+    max-width: 860px;
+}
+
+.page-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.page-title h2 {
+    font-size: 20px;
+    color: #1e3a5f;
+}
+
+.storage-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.storage-actions button {
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    background: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s;
+}
+
+.storage-actions button:hover {
+    background: #f0f2f5;
+}
+
+.storage-actions .btn-danger {
+    border-color: #e53e3e;
+    color: #e53e3e;
+}
+
+.storage-actions .btn-danger:hover {
+    background: #fff5f5;
+}
+
+/* ── CARD ── */
+.card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #1e3a5f;
+    padding: 12px 18px;
+}
+
+.card-header h3 {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.card-header button {
+    padding: 4px 12px;
+    border: 1px solid rgba(255,255,255,0.5);
+    background: transparent;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background 0.2s;
+}
+
+.card-header button:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+.card-body {
+    padding: 16px 18px;
+}
+
+/* ── VIEW ── */
+.section-view p {
+    line-height: 1.7;
+    color: #444;
+}
+
+.section-view ul {
+    padding-left: 20px;
+}
+
+.section-view ul li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.section-view dl dt {
+    font-weight: 600;
+    color: #1e3a5f;
+    margin-top: 8px;
+}
+
+.section-view dl dt:first-child {
+    margin-top: 0;
+}
+
+.section-view dl dd {
+    margin-left: 0;
+    color: #555;
+}
+
+.pengalaman-item {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.pengalaman-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.pengalaman-item h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e3a5f;
+}
+
+.pengalaman-item .periode {
+    font-size: 12px;
+    color: #888;
+    margin: 2px 0 6px;
+}
+
+.pengalaman-item p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.skill-item {
+    margin-bottom: 8px;
+}
+
+.skill-item strong {
+    color: #1e3a5f;
+}
+
+/* ── EDITOR ── */
+.section-editor label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 4px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.section-editor label:first-child {
+    margin-top: 0;
+}
+
+.section-editor input,
+.section-editor textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1.5px solid #cbd5e0;
+    border-radius: 6px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 13px;
+    color: #333;
+    background: #f9fafb;
+    transition: border-color 0.2s;
+}
+
+.section-editor input:focus,
+.section-editor textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background: #fff;
+}
+
+.section-editor textarea {
+    resize: vertical;
+}
+
+.editor-hint {
+    background: #eff6ff;
+    border-left: 3px solid #3b82f6;
+    padding: 8px 12px;
+    font-size: 12px;
+    color: #555;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.editor-hint code {
+    background: #dbeafe;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-family: monospace;
+    font-size: 11px;
+}
+
+.editor-btns {
+    margin-top: 12px;
+    display: flex;
+    gap: 8px;
+}
+
+.editor-btns button {
+    padding: 7px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.editor-btns button:first-child {
+    background: #1e3a5f;
+    color: #fff;
+}
+
+.editor-btns button:first-child:hover {
+    background: #2d4f7f;
+}
+
+.editor-btns button:last-child {
+    background: #e2e8f0;
+    color: #555;
+}
+
+.editor-btns button:last-child:hover {
+    background: #cbd5e0;
+}
+
+/* ── FOOTER ── */
+.cv-footer {
+    text-align: center;
+    padding: 16px;
+    background: #1e3a5f;
+    color: rgba(255,255,255,0.6);
+    font-size: 12px;
+}
+
+.cv-footer code {
+    color: #93c5fd;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+    .cv-wrapper {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+    }
+
+    .page-title {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV — Alifa Izzatunnisa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="cv-wrapper">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="sidebar-profile">
+                <div class="avatar">AI</div>
+                <h1 id="sidebar-nama">Alifa Izzatunnisa</h1>
+                <p id="sidebar-role">Mahasiswa Teknik Informatika</p>
+                <p id="sidebar-lokasi">Bandung, Indonesia</p>
+            </div>
+            <nav>
+                <p class="nav-label">ISI HALAMAN</p>
+                <ul>
+                    <li><a href="#ringkasan">Ringkasan</a></li>
+                    <li><a href="#data-diri">Data Diri</a></li>
+                    <li><a href="#pendidikan">Pendidikan</a></li>
+                    <li><a href="#pengalaman">Pengalaman</a></li>
+                    <li><a href="#keterampilan">Keterampilan</a></li>
+                    <li><a href="#sertifikasi">Sertifikasi</a></li>
+                    <li><a href="#kontak">Kontak</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- KONTEN UTAMA -->
+        <main class="cv-main">
+
+            <div class="page-title">
+                <h2>Curriculum Vitae</h2>
+                <div class="storage-actions">
+                    <button onclick="resetData()">🔄 Reset ke Data Awal</button>
+                    <button class="btn-danger" onclick="hapusStorage()">🗑 Hapus localStorage</button>
+                </div>
+            </div>
+
+            <!-- RINGKASAN -->
+            <section id="ringkasan" class="card">
+                <div class="card-header">
+                    <h3>Ringkasan Profil</h3>
+                    <button onclick="bukaTombolEdit('ringkasan')">Edit</button>
+                </div>
+                <div class="card-body">
+                    <div id="view-ringkasan" class="section-view">
+                        <p id="teks-ringkasan"></p>
+                    </div>
+                    <div id="editor-ringkasan" class="section-editor" style="display:none;">
+                        <label>Teks Ringkasan:</label>
+                        <textarea id="input-ringkasan" rows="5"></textarea>
+                        <div class="editor-btns">
+                            <button onclick="simpanBagian('ringkasan')">💾 Simpan</button>
+                            <button onclick="tutupEditor('ringkasan')">Batal</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- DATA DIRI -->
+            <section id="data-diri" class="card">
+                <div class="card-header">
+                    <h3>Data Diri</h3>
+                    <button onclick="bukaTombolEdit('dataDiri')">Edit</button>
+                </div>
+                <div class="card-body">
+                    <div id="view-dataDiri" class="section-view">
+                        <dl>
+                            <dt>Nama Lengkap</dt><dd id="dd-nama"></dd>
+                            <dt>Tempat &amp; Tanggal Lahir</dt><dd id="dd-ttl"></dd>
+                            <dt>Jenis Kelamin</dt><dd id="dd-jk"></dd>
+                            <dt>Agama</dt><dd id="dd-agama"></dd>
+                            <dt>Alamat</dt><dd id="dd-alamat"></dd>
+                        </dl>
+                    </div>
+                    <div id="editor-dataDiri" class="section-editor" style="display:none;">
+                        <label>Nama Lengkap:</label>
+                        <input type="text" id="input-nama">
+                        <label>Tempat &amp; Tanggal Lahir:</label>
+                        <input type="text" id="input-ttl">
+                        <label>Jenis Kelamin:</label>
+                        <input type="text" id="input-jk">
+                        <label>Agama:</label>
+                        <input type="text" id="input-agama">
+                        <label>Alamat:</label>
+                        <textarea id="input-alamat" rows="3"></textarea>
+                        <div class="editor-btns">
+                            <button onclick="simpanBagian('dataDiri')">💾 Simpan</button>
+                            <button onclick="tutupEditor('dataDiri')">Batal</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PENDIDIKAN -->
+            <section id="pendidikan" class="card">
+                <div class="card-header">
+                    <h3>Pendidikan</h3>
+                    <button onclick="bukaTombolEdit('pendidikan')">Edit</button>
+                </div>
+                <div class="card-body">
+                    <div id="view-pendidikan" class="section-view">
+                        <ul id="list-pendidikan"></ul>
+                    </div>
+                    <div id="editor-pendidikan" class="section-editor" style="display:none;">
+                        <p class="editor-hint">Pisahkan tiap entri dengan baris baru. Format: <code>Jenjang | Institusi | Periode</code></p>
+                        <textarea id="input-pendidikan" rows="6"></textarea>
+                        <div class="editor-btns">
+                            <button onclick="simpanBagian('pendidikan')">💾 Simpan</button>
+                            <button onclick="tutupEditor('pendidikan')">Batal</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PENGALAMAN -->
+            <section id="pengalaman" class="card">
+                <div class="card-header">
+                    <h3>Pengalaman &amp; Proyek</h3>
+                    <button onclick="bukaTombolEdit('pengalaman')">Edit</button>
+                </div>
+                <div class="card-body">
+                    <div id="view-pengalaman" class="section-view">
+                        <div id="list-pengalaman"></div>
+                    </div>
+                    <div id="editor-pengalaman" class="section-editor" style="display:none;">
+                        <p class="editor-hint">Format tiap baris: <code>Judul | Periode | Deskripsi</code><br>Pisahkan tiap entri dengan baris baru.</p>
+                        <textarea id="input-pengalaman" rows="6"></textarea>
+                        <div class="editor-btns">
+                            <button onclick="simpanBagian('pengalaman')">💾 Simpan</button>
+                            <button onclick="tutupEditor('pengalaman')">Batal</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- KETERAMPILAN -->
+            <section id="keterampilan" class="card">
+                <div class="card-header">
+                    <h3>Keterampilan</h3>
+                    <button onclick="bukaTombolEdit('keterampilan')">Edit</button>
+                </div>
+                <div class="card-body">
+                    <div id="view-keterampilan" class="section-view">
+                        <div id="list-keterampilan"></div>
+                    </div>
+                    <div id="editor-keterampilan" class="section-editor" style="display:none;">
+                        <p class="editor-hint">Format: <code>Nama Skill | Deskripsi</code><br>Pisahkan tiap skill dengan baris baru.</p>
+                        <textarea id="input-keterampilan" rows="8"></textarea>
+                        <div class="editor-btns">
+                            <button onclick="simpanBagian('keterampilan')">💾 Simpan</button>
+                            <button onclick="tutupEditor('keterampilan')">Batal</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SERTIFIKASI -->
+            <section id="sertifikasi" class="card">
+                <div class="card-header">
+                    <h3>Sertifikasi &amp; Pelatihan</h3>
+                    <button onclick="bukaTombolEdit('sertifikasi')">Edit</button>
+                </div>
+                <div class="card-body">
+                    <div id="view-sertifikasi" class="section-view">
+                        <ul id="list-sertifikasi"></ul>
+                    </div>
+                    <div id="editor-sertifikasi" class="section-editor" style="display:none;">
+                        <p class="editor-hint">Format: <code>Nama Sertifikat | Penerbit | Tahun</code><br>Pisahkan tiap entri dengan baris baru.</p>
+                        <textarea id="input-sertifikasi" rows="5"></textarea>
+                        <div class="editor-btns">
+                            <button onclick="simpanBagian('sertifikasi')">💾 Simpan</button>
+                            <button onclick="tutupEditor('sertifikasi')">Batal</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- KONTAK -->
+            <section id="kontak" class="card">
+                <div class="card-header">
+                    <h3>Kontak</h3>
+                    <button onclick="bukaTombolEdit('kontak')">Edit</button>
+                </div>
+                <div class="card-body">
+                    <div id="view-kontak" class="section-view">
+                        <ul id="list-kontak"></ul>
+                    </div>
+                    <div id="editor-kontak" class="section-editor" style="display:none;">
+                        <p class="editor-hint">Format: <code>Label | Nilai</code><br>Pisahkan tiap entri dengan baris baru.</p>
+                        <textarea id="input-kontak" rows="6"></textarea>
+                        <div class="editor-btns">
+                            <button onclick="simpanBagian('kontak')">💾 Simpan</button>
+                            <button onclick="tutupEditor('kontak')">Batal</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <footer class="cv-footer">
+        <p>&copy; 2026 Alifa Izzatunnisa — Data disimpan di <code>localStorage</code> browser.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
